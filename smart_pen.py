@@ -1,4 +1,4 @@
-# this function take 
+# this function takes the average of the background which can be further used to subtract out the background
 def background(cam):
   bck_gnd = np.zeros((480,640,3), np.float32)*0
   for i in range(0,100):
@@ -9,7 +9,10 @@ def background(cam):
   bck_gnd=bck_gnd.astype(np.uint8) 
   return(bck_gnd)
 
-
+# this function is used for caliberation
+# Note : 4 points are required for caliberation 
+# place the pen at the 4 corner of your screen (in clockwise order) and the press backspace 
+# the function saves the pixel locations of these points and use it to calicate the homographic transformation
 def caliberate(cam,bck_gnd):
   src=[];
   dst=[[0,0],[640,0],[640,480],[0,480]];
