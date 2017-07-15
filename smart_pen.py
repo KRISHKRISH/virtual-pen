@@ -1,3 +1,4 @@
+# this function take 
 def background(cam):
   bck_gnd = np.zeros((480,640,3), np.float32)*0
   for i in range(0,100):
